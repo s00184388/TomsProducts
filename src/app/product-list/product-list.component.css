@@ -1,0 +1,11 @@
+thead{
+    color: #337AB7;
+}
+
+.center{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+}

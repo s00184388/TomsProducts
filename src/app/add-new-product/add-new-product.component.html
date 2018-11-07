@@ -1,0 +1,60 @@
+
+<a [routerLink]="['/ProductList']">Back to Products</a>
+<br />
+<h2 class="page-header">Add New Products</h2>
+
+<form>
+  <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+              <div class="form-group col-md-4">
+                <label>Product Name</label>
+                <input class="form-control" [(ngModel)]="productName" name="productName" placeholder="Enter Product Name" required>
+                <small id="productHelp" class="form-text text-muted">Here you can enter the full name of the product.</small>
+              </div> 
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Product Code</label>
+                <input class="form-control" [(ngModel)]="productCode" name="productCode" placeholder="Product Code" required>
+                <small id="productHelp" class="form-text text-muted">Ex: gnd 110</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class='form-group col-md-4'>
+                <label>Release Date </label>
+                <input class="form-control" [(ngModel)]="releaseDate" name="releaseDate" placeholder="Date" required>
+            </div>
+        </div>
+        <div class="row">
+                <div class='form-group col-md-4'>
+                    <label>Description</label>
+                    <input class="form-control" [(ngModel)]="description" name="description" placeholder="Description" required>
+                </div>
+            </div>
+        <div class="row">
+            <div class='form-group col-md-4'>
+                <label>Price </label>
+                <input class="form-control" [(ngModel)]="price" name="price" placeholder="Enter the price here" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class='form-group col-md-4'>
+                <label>Rating </label>
+                <input class="form-control" [(ngModel)]="rating" name="rating" placeholder="Rating"required>
+            </div>
+        </div>
+        <div class="row">
+                <div class='form-group col-md-4'>
+                    <label>Image URL </label>
+                    <input class="form-control" [(ngModel)]="imageURL" name="imagURL" placeholder="Paste the image URL here"required>
+                </div>
+            </div>
+
+        <div class="row">
+          <div class="col-md-4">
+               <button  class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+  </div>
+  </div>
