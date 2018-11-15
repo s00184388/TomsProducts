@@ -27,16 +27,15 @@ import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 //angular material
-import {MatDialogModule,  MatTableModule,MatMenuModule,MatIconModule, MatProgressSpinnerModule} from '@angular/material';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';;
+import {faStar} from '@fortawesome/free-solid-svg-icons';
+import { DisplayClipartComponent } from './display-clipart/display-clipart.component';
 
-
+library.add(faStar)
 
 
 
@@ -51,30 +50,19 @@ import {MatDividerModule} from '@angular/material/divider';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    DisplayClipartComponent,
   ],
   imports: [
+    FontAwesomeModule,
     CommonModule,
-    MatToolbarModule, 
-    MatButtonModule, 
-    MatCardModule, 
-    MatInputModule, 
-    MatDialogModule, 
-    MatTableModule, 
-    MatMenuModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
+    MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule,
+    MatDividerModule,
     BrowserModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MatCardModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatToolbarModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

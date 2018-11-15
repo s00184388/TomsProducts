@@ -32,7 +32,7 @@
               <th>Code</th>
               <th>Available</th>
               <th>Price</th>
-              <!--<th>5 Star Menu</th>-->
+              <th>5 Star Menu</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -50,7 +50,7 @@
                     <td>{{product.productCode| lowercase| ConverToSpaces: '-'}}</td>
                     <td>{{product.releaseDate}}</td>
                     <td>{{product.price| currency: 'EUR':true:'1.2-2'}}</td>
-                   <!-- <td><app-star-rating [rating]='product.starRating'></app-star-rating></td>-->
+                    <td><app-star-rating [rating]='product.starRating'></app-star-rating></td>
                     <td><button class="btn btn-sm btn-primary" (click)='deleteProduct(product.id)'>Delete</button></td>
                 </tr>
            </table>

@@ -1,9 +1,61 @@
 
 <a [routerLink]="['/ProductList']">Back to Products</a>
 <br />
-<h2 class="page-header">Add New Products</h2>
+<div class="container col-md-4 align-items-center d-flex">
+  <h4 class="page-header">Add New Products</h4 >
+</div>
 
-<form>
+<div class='card col-md-4'>
+    <div class='card-body justify-content-center align-items-center'>
+      <form name="form" #f="ngForm" (ngSubmit)="submitProduct(f)" novalidate>
+        <div class="form-group">
+          <label for="inputProductName">Product Name</label>
+          <input type="text" class="form-control" name="inputProductName" [(ngModel)]="productName" #inputProductName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputProductName.invalid }" required>
+          <small id="productHelp" class="form-text text-muted">Here you can enter the full name of the product.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputProductCode">Product Code</label>
+          <input type="text" class="form-control" name="inputProductCode" [(ngModel)]="productCode" #inputProductCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputProductCode.invalid }" required>
+        </div>
+        <div class="form-group">
+          <label for="inputReleaseDate">Release Date</label>
+          <input type="text" class="form-control" name="inputReleaseDate" [(ngModel)]="releaseDate" #inputReleaseDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputReleaseDate.invalid }" required>
+        </div>
+        <div class="form-group">
+          <label for="inputDescription">Description</label>
+          <input type="text" class="form-control" name="inputDescription" [(ngModel)]="description" #inputDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputDescription.invalid }" required>
+        </div>
+        <div class="form-group">
+          <label for="inputPrice">Price</label>
+          <input type="number" class="form-control" name="inputPrice" [(ngModel)]="price" #inputPrice="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputPrice.invalid }" required>
+        </div>
+        <div class="form-group">
+          <label for="inputStarRating">Star Rating</label>
+          <input type="number" class="form-control" name="inputStarRating" [(ngModel)]="starRating" #inputStarRating="ngModel" [ngClass]="{ 'is-invalid': f.submitted && inputStarRating.invalid }" required>
+        </div>
+        <div class="form-group">
+          <label for="inputImageStr">Enter Image String</label>
+          <input type="text" class="form-control" name="inputImageStr" [(ngModel)]="imageStr" #inputImageStr="ngModel">
+          <button type="button" class="btn btn-primary" (click)="showHideDisplayClipartComponent()">Find Images</button>
+        </div>
+        <div class="form-group">
+          <app-display-clipart (addImageStringEE)="addImageStringToFormTextBox($event)" *ngIf='showDisplayClipartComponent'
+          [imageStr]='imageStr'></app-display-clipart>
+        </div>
+        <div class="form-group">
+          <label for="inputImageUrl">Image URL</label>
+          <input type="text" class="form-control" name="inputImageUrl" [(ngModel)]="imageUrl" #inputImageUrl="ngModel">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>  
+    </div>
+  </div>
+  
+  
+
+
+
+<!--<form>
   <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -29,7 +81,7 @@
         <div class="row">
                 <div class='form-group col-md-4'>
                     <label>Description</label>
-                    <input class="form-control" [(ngModel)]="description" name="description" placeholder="Description" required>
+                    <input class="form-control" [(ngModel)]="description" name="description" placeholder="Description" required >
                 </div>
             </div>
         <div class="row">
@@ -41,20 +93,22 @@
         <div class="row">
             <div class='form-group col-md-4'>
                 <label>Rating </label>
-                <input class="form-control" [(ngModel)]="rating" name="rating" placeholder="Rating"required>
+                <input class="form-control" [(ngModel)]="starRating" name="rating" placeholder="Rating"required>
             </div>
         </div>
-        <div class="row">
-                <div class='form-group col-md-4'>
-                    <label>Image URL </label>
-                    <input class="form-control" [(ngModel)]="imageURL" name="imagURL" placeholder="Paste the image URL here"required>
-                </div>
-            </div>
-
-        <div class="row">
-          <div class="col-md-4">
-               <button  class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="inputImageStr">Enter Image String</label>
+            <input type="text" class="form-control" name="inputImageStr" [(ngModel)]="imageStr" #inputImageStr="ngModel">
+            <button type="button" class="btn btn-primary" (click)="showHideDisplayClipartComponent()">Find Images</button>
           </div>
-        </div>
-  </div>
-  </div>
+          <div class="form-group">
+            <app-display-clipart (addImageStringEE)="addImageStringToFormTextBox($event)" *ngIf='showDisplayClipartComponent'
+            [imageStr]='imageStr'></app-display-clipart>
+          </div>
+          <div class="form-group">
+            <label for="inputImageUrl">Image URL</label>
+            <input type="text" class="form-control" name="inputImageUrl" [(ngModel)]="imageUrl" #inputImageUrl="ngModel">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </div>-->

@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import{AngularFirestoreModule} from '@angular/fire/firestore';
-import{AngularFireModule} from '@angular/fire';
 import { RouterModule,Router} from '@angular/router';
 import { ProductService } from '../shared/product.service';
 import { IProducts } from '../product-list/products';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-
 
 @Component({
   selector: 'app-add-new-product',
@@ -15,19 +9,57 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
   styleUrls: ['./add-new-product.component.css']
 })
 
-export class AddNewProductComponent implements OnInit {
 
+
+export class AddNewProductComponent {
+
+  pageTitle: string = "Add new Product";
+  model: any = {};
+  showDisplayClipartComponent: boolean;
   
+  productName: string;
+  productCode: string;
+  releaseDate: string;
+  description: string;
+  price: number;
+  starRating: number;
+  imageUrl: string;
 
-  constructor() { }
-  
-  onAddSubmit():void{
+  constructor(private _productService:ProductService, private router: Router){
 
-      
+  } 
+
+  //controls hiding the component until the button is pressed
+  showHideDisplayClipartComponent():boolean{
+    this.showDisplayClipartComponent = !this.showDisplayClipartComponent;
+    return false;
   }
 
-
-  ngOnInit() {
-    
+  //receives the URL string from the display-cipart component
+  //displays in the text box
+  addImageStringToFormTextBox(evt):boolean{
+    console.log("using this url:" + evt);
+    this.imageUrl = evt;
+    return false;
   }
-}
+
+  submitProduct(form){
+   
+    console.log(form.value);
+
+    let products: IProducts =
+      {
+        productName: this.productName,
+        productCode: this.productCode,
+        releaseDate: this.releaseDate,
+        description: this.description,
+        price: this.price,
+        starRating: this.starRating,
+        imageUrl: this.imageUrl,
+
+      };
+    this._productService.addProduct(products);
+    //redirect to the product-list component
+    this.router.navigate(['/product-list']);
+    }   
+  }

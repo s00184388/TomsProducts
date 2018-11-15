@@ -27,6 +27,11 @@ export class ProductService {
     this.productsCollection=_afs.collection<IProducts>("products");
   }
 
+  addProduct (product: IProducts): void {
+    this.productsCollection.add(product);   
+  }
+
+
   deleteProduct(id:string):void{
     this.productsCollection.doc(id).delete()
     .catch(error=>
@@ -46,6 +51,19 @@ export class ProductService {
     })));
     return this.products;
   }
+
+  addAllProducts(){
+    this._http.get<IProducts[]>(this._producturl).subscribe(
+        products => {
+            this.allProducts = products;
+            for(let product of this.allProducts){
+                console.log("Adding:" + product.productName);
+                this.productsCollection.add(product);
+            }
+        },
+        error => (this.errorMessage = <any>error)
+    );
+}
 
   onAddSubmit(string)
   {
