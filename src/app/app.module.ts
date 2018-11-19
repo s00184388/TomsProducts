@@ -26,7 +26,7 @@ import{AuthGuard } from './service/auth.guard';
 import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
-//angular material
+//angular materialj
 import { MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule,MatLabel } from '@angular/material';
 import {MatDialogModule, MatTableModule,MatMenuModule,MatIconModule, MatProgressSpinnerModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -36,7 +36,6 @@ import {library} from '@fortawesome/fontawesome-svg-core';;
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import { DisplayClipartComponent } from './display-clipart/display-clipart.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import 'hammerjs';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 library.add(faStar)
@@ -83,7 +82,7 @@ library.add(faStar)
          {path: 'Home' , component:HomeComponent},
          {path: 'Login' , component: LoginComponent},
          {path: 'Register' , component: RegisterComponent},
-         {path: '**' ,redirectTo:'Login',canActivate:[AuthGuard]}
+         {path: '**' ,redirectTo:'Home',canActivate:[AuthGuard]}
 
       ],
     )

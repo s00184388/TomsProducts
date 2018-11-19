@@ -1,5 +1,54 @@
+<!-- Default form login -->
+<div class="container col-md-4 py-5">
 
-<mat-toolbar>
+
+<form (ngSubmit)="register()" class="text-center border border-default p-5">
+
+        <p class="h4 mb-4">Sign Up</p>
+    
+        <!-- Email -->
+        <div class="form-group">
+                <input [(ngModel)]='email' name="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
+        </div>
+        
+    
+        <!-- Password -->
+        <div class="form-group">
+                <input [(ngModel)]='pwd' type="password" placeholder="password" class="form-control mb-4" formControlName="password">
+        </div>
+         
+        <div class="form-group">
+                <input [(ngModel)]='name'  class="form-control mb-4" placeholder="Name">
+        </div>
+
+           
+        <!-- Sign in button -->
+        <button class="btn btn-block my-4  color" type="submit">Sign Up</button>
+    
+    
+        <!-- Social login -->
+        <p>or sign in with:</p>
+    
+        <a type="button" class="light-blue-text mx-2">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+            <i class="fa fa-github"></i>
+        </a>
+    
+    </form>
+</div>
+    <!-- Default form login -->
+
+
+
+<!--<mat-toolbar>
    <span>Registration</span>
  </mat-toolbar>
  <div class="container col-md-4">
@@ -10,12 +59,12 @@
     <mat-card-content>
             <mat-form-field class="full-width">
                     <mat-label>Email</mat-label>
-                    <input [(ngModel)]='email' name="email" matInput placeholder="email" type="email">
+                    <input  name="email" matInput placeholder="email" type="email">
                   </mat-form-field>
                   <br>
                   <mat-form-field class="full-width" >
                       <mat-label>Email</mat-label>
-                      <input [(ngModel)]='pwd' name="password" matInput placeholder="password" type="password">
+                      
                   </mat-form-field>
                   <br>
                   <mat-form-field class="full-width">

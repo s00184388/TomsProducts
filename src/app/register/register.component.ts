@@ -21,9 +21,11 @@ export class RegisterComponent implements OnInit {
 
   register()
   {
+    
     this.auth.signup(this.email,this.pwd,this.name);
     console.log(this.email);
     console.log("Your account has been created successfully ");
+    
   }
 
 }
