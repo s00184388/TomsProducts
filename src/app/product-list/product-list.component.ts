@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { IProducts } from './products';
 import { ProductService } from '../shared/product.service';
+import{AuthService} from '../service/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,7 @@ export class ProductListComponent implements OnInit{
   imageWidth: number=30;
   imageMargin:number=5;
   showImage: boolean=false;
-  
+  isLoggedIn:boolean; 
   _listFilter:string;
   get listFilter():string{
     return this._listFilter;
@@ -29,7 +30,7 @@ performFilter(filterBy:string ):IProducts[]{
     products.productName.toLocaleLowerCase().indexOf(filterBy)!==-1);
 }
 
-constructor(private _productService:ProductService){
+constructor(private _productService:ProductService,private auth:AuthService){
     
 }
     set listFilter(value:string)
@@ -58,4 +59,9 @@ constructor(private _productService:ProductService){
         this.filteredProducts=this.products;
       }, error=><any>error);
 }
+    userLoggedIn():boolean{
+      this.isLoggedIn=this.auth.isLoggedIn();
+      return this.isLoggedIn
+    }
+
 }
