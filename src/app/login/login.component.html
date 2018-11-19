@@ -1,3 +1,5 @@
+
+<div class="container col-xs-4 py-5">
 <mat-card class="example-card"> 
    <mat-card-header>
         <mat-card-title>Login</mat-card-title>
@@ -25,14 +27,15 @@
         </form>
      </mat-card-content>
      <mat-card-actions>
-          <button mat-raised-button (click)="login()" color="primary">Login</button>
+          <button mat-raised-button (click)="login()" color="primary"><i class="fa fa-facebook-f"></i>Login</button>
+          <button mat-raised-button (click)='fbLogin()'color="primary"> Facebook</button>
+          <button mat-raised-button (click)='googleLogin()'><mat-icon>Google</mat-icon>Google</button>
      </mat-card-actions>
      </mat-card>
         
-     <button mat-raised-button (click)='fbLogin()'><i class="fa fa-facebook left"></i>Facebook</button>
-     <button mat-raised-button (click)='googleLogin()'><i class="fa fa-facebook left"></i>Facebook</button>
-
-<!--<mat-card>
+     
+ <!--</div>
+<mat-card>
   <mat-card-content>
     <form class="my-form" [formGroup]="form" (ngSubmit)="login()">
       <mat-form-field class="full-width">

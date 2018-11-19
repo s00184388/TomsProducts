@@ -1,25 +1,46 @@
-<mat-card>
+
+<mat-toolbar>
+   <span>Registration</span>
+ </mat-toolbar>
+ <div class="container col-md-4">
+ <mat-card class="my-card">
+        <mat-card-header>
+            <mat-card-title>Register New User</mat-card-title>
+        </mat-card-header>
+    <mat-card-content>
+            <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input [(ngModel)]='email' name="email" matInput placeholder="email" type="email">
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field class="full-width" >
+                      <mat-label>Email</mat-label>
+                      <input [(ngModel)]='pwd' name="password" matInput placeholder="password" type="password">
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field class="full-width">
+                      <mat-label>Name</mat-label>
+                      <input [(ngModel)]='name' name="name" matInput placeholder="name">
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field style="width: 100%" class="full-width">
+                        <mat-label>Description</mat-label>
+                      <textarea [(ngModel)]='description' name="description" matInput placeholder="description"></textarea>
+                  </mat-form-field>
+                  <br>
+                  <button (click)="register()" mat-raised-button-color="primary">Register</button>
+    </mat-card-content>
+ </mat-card>
+
+
+</div>
+
+<!--<mat-card>
   <mat-card-header>
     <mat-card-title>Register New User</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
-      <mat-form-field>
-        <input [(ngModel)]='email' name="email" matInput placeholder="email" type="email">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input [(ngModel)]='pwd' name="password" matInput placeholder="password" type="password">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input [(ngModel)]='name' name="name" matInput placeholder="name">
-      </mat-form-field>
-      <br>
-      <mat-form-field style="width: 100%">
-          <textarea [(ngModel)]='description' name="description" matInput placeholder="description"></textarea>
-      </mat-form-field>
-      <br>
-      <button (click)="register()" mat-raised-button-color="primary">Register</button>
+      
   </mat-card-content>
-</mat-card>
+</mat-card>-->

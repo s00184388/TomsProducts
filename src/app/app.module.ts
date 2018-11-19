@@ -27,7 +27,7 @@ import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 //angular material
-import { MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule,MatLabel } from '@angular/material';
 import {MatDialogModule, MatTableModule,MatMenuModule,MatIconModule, MatProgressSpinnerModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDividerModule} from '@angular/material/divider';
@@ -36,6 +36,8 @@ import {library} from '@fortawesome/fontawesome-svg-core';;
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import { DisplayClipartComponent } from './display-clipart/display-clipart.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import 'hammerjs';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 library.add(faStar)
 
@@ -58,6 +60,7 @@ library.add(faStar)
   imports: [
     FontAwesomeModule,
     CommonModule,
+    MDBBootstrapModule.forRoot(),
     MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule,
     MatDividerModule,MatDialogModule, MatTableModule,MatMenuModule,MatIconModule, MatProgressSpinnerModule,
     BrowserModule,
