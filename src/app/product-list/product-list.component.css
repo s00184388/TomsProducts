@@ -1,5 +1,5 @@
 thead{
-    color: #337AB7;
+    color: #3F51B5;
 }
 
 .center{
@@ -8,4 +8,12 @@ thead{
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%)
+}
+
+.panel-heading{
+    background-color:#3F51B5
+}
+
+.btn{
+    background-color:#3F51B5
 }

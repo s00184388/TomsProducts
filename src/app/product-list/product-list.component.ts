@@ -49,8 +49,7 @@ constructor(private _productService:ProductService){
   deleteProduct(id:string):void{
     this._productService.deleteProduct(id);
   }
-
-  
+   
 
   ngOnInit(): void {
     this._productService.getProducts().subscribe(products=>

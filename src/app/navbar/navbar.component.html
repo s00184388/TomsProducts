@@ -1,12 +1,15 @@
- <mat-toolbar color="primary">
-    <button mat-button routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" routerLink="Home">Home</button>
-    <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="ProductList">Products</button>
-    <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="AddNewProducts">Add Products</button>
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-button routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" routerLink="Home">Home</button>
+            <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="ProductList">Products</button>
+            <button mat-button routerLinkActive="active" routerLink="AddNewProducts">Add Products</button>
 
-    <span style="flex:1 1 auto"></span>
-    <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="Login">Login</button>
-    <button mat-button routerLinkActive="active" *ngIf="isLoggedIn" (click)=onLogOut()>LogOut</button>
-    <button mat-button routerLinkActive="active" routerLink="Register">Register</button>
+            <span style="flex:1 1 auto"></span>
+            <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="Login">Login</button>
+            <button mat-button routerLinkActive="active" *ngIf="isLoggedIn" (click)=onLogOut()>LogOut</button>
+            <button mat-button routerLinkActive="active" routerLink="Register">Register</button>
+        </mat-toolbar-row>
 </mat-toolbar>
+    
 
 

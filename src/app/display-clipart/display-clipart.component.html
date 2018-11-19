@@ -1,12 +1,25 @@
-<div fxLayout="row" class="layout" fxLayoutAlign="space-evenly stretch" fxLayoutGap="20px" *ngIf='clipArtData'>
-  <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let image of clipArtData.payload">
+<!--<div fxLayout="row" class="layout" fxLayoutAlign="space-around stretch" fxLayoutGap="25px" *ngIf='clipArtData'>
+  <mat-card fxFlex="35%" *ngFor="let image of clipArtData.payload">
     <mat-card-header>
       <mat-card-title>{{image.title}}</mat-card-title>
     </mat-card-header>
-    <img class="image" mat-card-md-img [src]='image.svg.url' [title]='image.title'>
+    <img class="image" mat-card-md-img [src]='image.svg.url' [title]='image.title' width="50px" height="50px">
 
     <mat-card-actions fxLayoutAlign="center end">
       <button mat-raised-button color="primary" (click)="selectImage(image.svg.url)">Use Image</button>
     </mat-card-actions>
   </mat-card>
-</div>
+</div>-->
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutWrap fxLayoutGap="0.5%" *ngIf='clipArtData'>
+    <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let image of clipArtData.payload">
+      <mat-card-header>
+        <mat-card-title>{{image.title}}</mat-card-title>
+      </mat-card-header>
+      <img class="image" mat-card-md-img [src]='image.svg.url' [title]='image.title' width="100px" height="100px ">
+  
+      <mat-card-actions fxLayoutAlign="center end">
+        <button mat-raised-button color="primary" (click)="selectImage(image.svg.url)">Use Image</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

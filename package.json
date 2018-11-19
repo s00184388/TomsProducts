@@ -27,6 +27,7 @@
     "@fortawesome/angular-fontawesome": "^0.2.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
+    "angular-confirmation-popover": "^4.2.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "firebase": "^5.5.4",
@@ -41,7 +42,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
-    "@angular/cli": "~6.2.3",
+    "@angular/cli": "^6.2.7",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",

@@ -44,10 +44,7 @@ export class AddNewProductComponent {
   }
 
   submitProduct(form){
-   
-    console.log(form.value);
-
-    let products: IProducts =
+      let products: IProducts =
       {
         productName: this.productName,
         productCode: this.productCode,
@@ -56,10 +53,10 @@ export class AddNewProductComponent {
         price: this.price,
         starRating: this.starRating,
         imageUrl: this.imageUrl,
-
       };
     this._productService.addProduct(products);
     //redirect to the product-list component
-    this.router.navigate(['/product-list']);
+    console.log('Product Added');
+    this.router.navigate(['ProductList']);
     }   
   }
