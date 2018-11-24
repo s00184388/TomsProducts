@@ -1,95 +1,30 @@
-<!-- Default form login -->
+
 <div class="container col-md-4 py-5">
-
-
-<form (ngSubmit)="register()" class="text-center border border-default p-5">
-
-        <p class="h4 mb-4">Sign Up</p>
-    
-        <!-- Email -->
-        <div class="form-group">
-                <input [(ngModel)]='email' name="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
-        </div>
-        
-    
-        <!-- Password -->
-        <div class="form-group">
-                <input [(ngModel)]='pwd' type="password" placeholder="password" class="form-control mb-4" formControlName="password">
-        </div>
-         
-        <div class="form-group">
-                <input [(ngModel)]='name'  class="form-control mb-4" placeholder="Name">
-        </div>
-
-           
-        <!-- Sign in button -->
-        <button class="btn btn-block my-4  color" type="submit">Sign Up</button>
-    
-    
-        <!-- Social login -->
-        <p>or sign in with:</p>
-    
-        <a type="button" class="light-blue-text mx-2">
-            <i class="fa fa-facebook"></i>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-            <i class="fa fa-linkedin"></i>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-            <i class="fa fa-github"></i>
-        </a>
-    
-    </form>
+    <div class="card">
+            <div class="card-header  text-center">
+                    <strong>Sign in</strong>
+            </div>
+                <div class="card-body  mx-auto">
+                <form name="form"  #f="ngForm" (ngSubmit)="register(f)">
+                    <div class="row">
+                        <div class="form-group ">
+                            <input type="text" class="form-control mb-4" name="email" [(ngModel)]="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="form-group ">
+                                <input type="password" class="form-control mb-4" name="password" [(ngModel)]="pwd" placeholder="Password" required>
+                                <div *ngIf="this.errorMessage">Type again</div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-4" name="name" [(ngModel)]="name" placeholder="Name" required>
+                            </div>
+                    </div>
+                    
+                    <button class="btn btn-block my-4 color" type="submit">Sign in</button>
+                </form>
+            </div>
+    </div>
 </div>
-    <!-- Default form login -->
-
-
-
-<!--<mat-toolbar>
-   <span>Registration</span>
- </mat-toolbar>
- <div class="container col-md-4">
- <mat-card class="my-card">
-        <mat-card-header>
-            <mat-card-title>Register New User</mat-card-title>
-        </mat-card-header>
-    <mat-card-content>
-            <mat-form-field class="full-width">
-                    <mat-label>Email</mat-label>
-                    <input  name="email" matInput placeholder="email" type="email">
-                  </mat-form-field>
-                  <br>
-                  <mat-form-field class="full-width" >
-                      <mat-label>Email</mat-label>
-                      
-                  </mat-form-field>
-                  <br>
-                  <mat-form-field class="full-width">
-                      <mat-label>Name</mat-label>
-                      <input [(ngModel)]='name' name="name" matInput placeholder="name">
-                  </mat-form-field>
-                  <br>
-                  <mat-form-field style="width: 100%" class="full-width">
-                        <mat-label>Description</mat-label>
-                      <textarea [(ngModel)]='description' name="description" matInput placeholder="description"></textarea>
-                  </mat-form-field>
-                  <br>
-                  <button (click)="register()" mat-raised-button-color="primary">Register</button>
-    </mat-card-content>
- </mat-card>
-
-
-</div>
-
-<!--<mat-card>
-  <mat-card-header>
-    <mat-card-title>Register New User</mat-card-title>
-  </mat-card-header>
-
-  <mat-card-content>
-      
-  </mat-card-content>
-</mat-card>-->

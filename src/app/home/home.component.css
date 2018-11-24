@@ -1,4 +1,7 @@
 .color{
   background-color: #3F51B5;
-  margin-bottom: 0px;
+  }
+
+.jumbotron{
+  min-height: 600px;
 }

@@ -40,7 +40,7 @@
                           <td>{{product.releaseDate}}</td>
                           <td>{{product.price| currency: 'EUR':true:'1.2-2'}}</td>
                           <td><app-star-rating [rating]='product.starRating'></app-star-rating></td>
-                          <td *ngIf='userLoggedIn()'><button class="btn btn-sm btn-primary" (click)='deleteProduct(product.id)'>Delete</button></td>
+                          <td *ngIf='userLoggedIn()'><button class="btn btn-sm color" (click)='deleteProduct(product.id)'>Delete</button></td>
                       </tr>
 
                   </tbody>

@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 }
 fbLogin(){
   this.auth.doFacebookLogin().then(res => {
-    this.myRoute.navigate(['product-list']);
+    this.myRoute.navigate(['ProductList']);
   }, err => {
     console.log(err);
     this.errorMessage = err.message;
@@ -47,7 +47,7 @@ fbLogin(){
 }
 googleLogin(){
   this.auth.doGoogleLogin().then(res => {
-    this.myRoute.navigate(['product-list']);
+    this.myRoute.navigate(['ProductList']);
   }, err => {
     console.log(err);
     this.errorMessage = err.message;

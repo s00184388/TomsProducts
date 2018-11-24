@@ -68,6 +68,7 @@ export class AuthService {
       .then(res => {
         resolve(res);
         this.loggedInStatus = true;
+        console.log(value.email);
       }, err => reject(err))
     })
   }
@@ -88,7 +89,8 @@ export class AuthService {
 
   isLoggedIn():boolean {
       return this.loggedInStatus;
-  }
+      
+      }
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -98,6 +100,7 @@ export class AuthService {
       .then(res => {
         resolve(res);
         this.loggedInStatus = true;
+        console.log(provider.providerId);
       }, err => {
         console.log(err);
         reject(err);

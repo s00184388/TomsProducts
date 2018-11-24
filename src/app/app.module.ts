@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +24,6 @@ import{AngularFireAuth,AngularFireAuthModule} from '@angular/fire/auth';
 import{AuthService} from './service/auth.service';
 import{AuthGuard } from './service/auth.guard';
 import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 //angular materialj
 import { MatCardModule,MatCheckboxModule , MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule,MatLabel } from '@angular/material';
